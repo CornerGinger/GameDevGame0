@@ -36,6 +36,7 @@ namespace GameDevGame0
                 new MenuButton("playbutton", new Vector2(700,50))
             };
             logo = new LogoSprite();
+            logo.Initialize();
 			base.Initialize();
         }
 
@@ -58,6 +59,7 @@ namespace GameDevGame0
 
             // TODO: Add your update logic here
             foreach (var button in menuButtons) button.Update(gameTime);
+            logo.Update(gameTime, graphics);
             base.Update(gameTime);
         }
 
