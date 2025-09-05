@@ -17,7 +17,7 @@ namespace GameDevGame0
 	public class MenuButton
 	{
 		private InputManager inputManager;
-		private Texture2D quitTexture;
+		private Texture2D texture;
 		private float buttonScale = 3.0f;
 		public string Name { get; set; }
 		public Vector2 Dimensions { get; set; } 
@@ -32,9 +32,10 @@ namespace GameDevGame0
 		public bool IsClicked { get; set; } = false;
 		public bool IsDisabled { get; set; } = false;
 
-		public MenuButton(Vector2 position)
+		public MenuButton(string name, Vector2 position)
 		{
 			Position = position;
+			Name = name;
 			Dimensions = ButtonSize();
 		}
 
@@ -50,14 +51,17 @@ namespace GameDevGame0
 		{
 			return new Vector2(Position.X + (32 * buttonScale), Position.Y + (32 * buttonScale));
 		}
+
 		#region Overloaded Methods
+
 		public void LoadContent(ContentManager content)
 		{
-			quitTexture = content.Load<Texture2D>("quitbutton");
+			texture = content.Load<Texture2D>(Name);
 		}
 
 		public void Update(GameTime gameTime)
 		{
+			/* Trying to figure out for next milestone
 			if (Visible)
 			{
 				if (inputManager.CurrentMouseState.X > Position.X &&
@@ -77,11 +81,12 @@ namespace GameDevGame0
 					IsHovered = false;
 				}
 			}
+			*/
 		}
 
 		public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
 		{
-			spriteBatch.Draw(quitTexture, Position, AwesomeRectangleMaker(), Color.White,0f,new Vector2(0,0),buttonScale,SpriteEffects.None, 0);
+			spriteBatch.Draw(texture, Position, AwesomeRectangleMaker(), Color.White,0f,new Vector2(0,0),buttonScale,SpriteEffects.None, 0);
 		}
 
 		#endregion

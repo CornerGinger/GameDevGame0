@@ -15,17 +15,7 @@ namespace GameDevGame0
         private SpriteFont agency;
         private SpriteFont agencybuttons;
 
-		/*
-		private MenuButton playButton;
-		private Vector2 playButtonPosition;
-
-		private MenuButton settingsButton;
-		private Vector2 settingsButtonPosition;
-
-        private Texture2D quitTexture;
-		private Vector2 quitButtonPosition;
-        */
-		private MenuButton[] quitButtons;
+		private MenuButton[] menuButtons;
         private LogoSprite logo;
 
 		public Game1()
@@ -38,12 +28,12 @@ namespace GameDevGame0
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            quitButtons = new MenuButton[]
+            menuButtons = new MenuButton[]
             {
-                new MenuButton(new Vector2(700,350)),
-                new MenuButton(new Vector2(700,250)),
-                new MenuButton(new Vector2(700,150)),
-                new MenuButton(new Vector2(700,50))
+                new MenuButton("quitbutton", new Vector2(700,350)),
+                new MenuButton("settingbutton", new Vector2(700,250)),
+                new MenuButton("creditsbutton", new Vector2(700,150)),
+                new MenuButton("playbutton", new Vector2(700,50))
             };
             logo = new LogoSprite();
 			base.Initialize();
@@ -56,7 +46,7 @@ namespace GameDevGame0
 			agency = Content.Load<SpriteFont>("agency");
             agencybuttons = Content.Load<SpriteFont>("agencybuttons");
 
-            foreach (var button in quitButtons) button.LoadContent(Content);
+            foreach (var button in menuButtons) button.LoadContent(Content);
             logo.LoadContent(Content);
             
 		}
@@ -67,7 +57,7 @@ namespace GameDevGame0
                 Exit();
 
             // TODO: Add your update logic here
-            foreach (var button in quitButtons) button.Update(gameTime);
+            foreach (var button in menuButtons) button.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -79,7 +69,7 @@ namespace GameDevGame0
             spriteBatch.Begin();
 			spriteBatch.DrawString(agency, "Infinite Games but No Games", new Vector2(16, graphics.GraphicsDevice.Viewport.Height / 2), Color.LightPink);
 			spriteBatch.DrawString(agencybuttons, "To close the game, press 'esc' or the 'QUIT' button", new Vector2(16, (graphics.GraphicsDevice.Viewport.Height / 2) + 100), Color.LightPink);
-			foreach(var button in quitButtons) button.Draw(gameTime, spriteBatch);
+			foreach(var button in menuButtons) button.Draw(gameTime, spriteBatch);
             logo.Draw(gameTime, spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);

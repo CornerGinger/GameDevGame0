@@ -27,6 +27,30 @@
 /processorParam:TextureFormat=Compressed
 /build:agencybuttons.spritefont
 
+#begin creditsbutton.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=72,135,148,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:creditsbutton.png
+
+#begin playbutton.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=72,135,148,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:playbutton.png
+
 #begin quitbutton.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -38,6 +62,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:quitbutton.png
+
+#begin settingbutton.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=72,135,148,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:settingbutton.png
 
 #begin wavysignature.png
 /importer:TextureImporter
